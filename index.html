@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>New Project</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <link rel="stylesheet" href="styles/style.css">
+        <script src="https://kit.fontawesome.com/45714df28f.js" crossorigin="anonymous"></script>
+        
+    </head>
+    <body id="dark_body">
+        <nav class="navbar  navbar-expand-sm align-items-center px-3 mx-1 rounded-5 shadow py-3" style="background-color: rgb(247, 247, 247)" >
+             <div class="container-fluid">
+            <button type="button" class="navbar-toggler justify-content-start" data-bs-toggle="collapse" data-bs-target="#navCol" onclick="myFun()" >
+                <span class="navbar-toggler-icon mt-0 pt-0" style="height: 20px" id="navbarToggler"></span>
+            </button>
+            <div class=" collapse navbar-collapse justify-content-start"
+                 id="navCol">
+                <ul class="nav navvan ml-1 container-fluid" style="font-size:18px">
+                    <li class="nav-item nav-item2" ><a class="nav-link dark_link active" href="#home" data-bs-toggle="tab">لیست محصولات</a></li>
+                    <li class="nav-item nav-item2"><a class="nav-link dark_link dark_text" href="#cards" data-bs-toggle="tab">کارت ها</a></li>
+                    <li class="nav-item nav-item2"><a class="nav-link dark_link" href="#contact" data-bs-toggle="tab">ارتباط با ما</a></li>
+                    <li class="nav-item nav-item2 pt-2">
+                        <div class="dropdown dropdown-menu-end">
+                            <button type="button" class="dropdown-toggle dark_link" data-bs-toggle="dropdown">
+                                Dropdown
+                            </button>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Link 1</a></li>
+                                    <div class="dropdown dropstart">
+                                        <li class="sub-menu2"><a href="#" class="dropdown-item dropdown-toggle" data-toggle="dropdown">Link 2</a>
+                                            <ul style="margin-left: -160px;margin-top: -30px" class="dropdown-menu pick-menu">
+                                                <li><a href="#" class="dropdown-item">Link 2.1</a></li>
+                                                <li><a href="#" class="dropdown-item">Link 2.2</a></li>
+                                            </ul>
+                                        </li>
+                                    </div>
+                                    <li><a class="dropdown-item" href="#">Link 3</a></li>
+                                </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+             <div class="navbar-brand ms-2 justify-content-end align-self-start" style="position: absolute;right: 10px">
+                 <div style="display: inline-block;padding-right: 4px">
+                     <a href="#" onclick="darkFunc()"><i id="darkModeIcon" style="color: black" class="fa-sharp fa-solid fa-circle-half-stroke"></i></a>
+                 </div>
+                     
+                 <a  href="index2.html">
+                     <img src="images.jpg" class="rounded-circle" style="width: 60px; height: 25px">
+                 </a>
+                    
+            </div>
+                 </div>
+        </nav>
+        <div class="tab-content container mt-3">
+    <div id="home" class="container tab-pane active"><br>
+        <div class="row">
+            <div class="container col-sm-6 col-4">
+                
+                <a id="btnAdd" type="button" class="m-md-3 m-2" onclick="addRow()" href="#appId"><i class="fa-solid fa-plus fa-2x"></i></a>
+               <a type="button" class="m-md-3 m-2" href="index.html" onclick="refreshTable()"><i class="fa-solid fa-arrows-rotate fa-2x "></i></a>
+            <!--   /* <button type="button" class="btn btn-primary" onclick="darkFunc()">color</button>*/-->
+            </div>
+            <div class="col-sm-6 col-8">
+                <form class="d-flex">
+                    <input class="form-control me-2" type="text" id="myInput" placeholder="جستجو در لیست..." style="direction: rtl" data-toggle="tooltip" data-placement="bottom" title="جستجو براساس ID">
+                    <button class="btn btn-primary" type="button" onclick="searchFunc()"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </form>
+            </div>
+        </div>
+        <div class="container-fluid tableFixHead mt-3">
+        <table class="container table table-striped mt-4" id="myTable">
+            <thead>
+      <tr>
+        <th>Date</th>
+        <th>Order ID</th>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th>Total</th>
+      </tr>
+    </thead>
+    <tbody class="tableBody">
+      <tr>
+        <td>2018-09-29 01:22</td>
+        <td>200398</td>
+        <td>iPhone X 64Gb</td>
+        <td>$999.00</td>
+        <td>1</td>
+        <td>$999.00</td>
+      </tr>
+      <tr>
+        <td>2017-09-29 01:22</td>
+        <td>207398</td>
+        <td>iPhone X 64Gb</td>
+        <td>$999.00</td>
+        <td>2</td>
+        <td>$999.00</td>
+      </tr>
+        <tr>
+        <td>2017-09-29 01:22</td>
+        <td>206398</td>
+        <td>iPhone X 64Gb</td>
+        <td>$999.00</td>
+        <td>3</td>
+        <td>$999.00</td>
+      </tr>
+        <tr>
+        <td>2017-09-29 01:22</td>
+        <td>203390</td>
+        <td>iPhone X 64Gb</td>
+        <td>$999.00</td>
+        <td>1</td>
+        <td>$999.00</td>
+      </tr>
+        <tr>
+        <td>2017-09-29 01:22</td>
+        <td>140398</td>
+        <td>iPhone X 64Gb</td>
+        <td>$999.00</td>
+        <td>2</td>
+        <td>$999.00</td>
+      </tr>
+        <tr>
+        <td>2017-09-29 01:22</td>
+        <td>932398</td>
+        <td>iPhone X 64Gb</td>
+        <td>$999.00</td>
+        <td>1</td>
+        <td>$999.00</td>
+      </tr>
+        <tr>
+        <td>2017-09-29 01:22</td>
+        <td>204698</td>
+        <td>iPhone X 64Gb</td>
+        <td>$999.00</td>
+        <td>2</td>
+        <td>$999.00</td>
+      </tr>
+        <tr>
+        <td>2017-09-29 01:22</td>
+        <td>207598</td>
+        <td>iPhone X 64Gb</td>
+        <td>$999.00</td>
+        <td>1</td>
+        <td>$999.00</td>
+      </tr>
+        <tr>
+        <td>2017-09-29 01:22</td>
+        <td>207608</td>
+        <td>iPhone X 64Gb</td>
+        <td>$999.00</td>
+        <td>2</td>
+        <td>$999.00</td>
+      </tr>
+        <tr>
+        <td>2017-09-29 01:22</td>
+        <td>120398</td>
+        <td>iPhone X 64Gb</td>
+        <td>$999.00</td>
+        <td>1</td>
+        <td>$999.00</td>
+      </tr>
+        <tr>
+        <td>2017-09-29 01:22</td>
+        <td>202498</td>
+        <td>iPhone X 64Gb</td>
+        <td>$999.00</td>
+        <td>2</td>
+        <td>$999.00</td>
+      </tr>
+        <tr>
+        <td>2017-09-29 01:22</td>
+        <td>670398</td>
+        <td>iPhone X 64Gb</td>
+        <td>$999.00</td>
+        <td>1</td>
+        <td>$999.00</td>
+      </tr>
+        <tr>
+        <td>2017-09-29 01:22</td>
+        <td>273398</td>
+        <td>iPhone X 64Gb</td>
+        <td>$999.00</td>
+        <td>2</td>
+        <td>$999.00</td>
+      </tr>
+        <tr>
+        <td>2017-09-29 01:22</td>
+        <td>200486</td>
+        <td>iPhone X 64Gb</td>
+        <td>$999.00</td>
+        <td>3</td>
+        <td>$999.00</td>
+      </tr>
+       <tr class="new-tr tr-hidden" id="newRow1">
+        <td class="new-td"><input class="inputTd"  type="text" id="myInput1"></td>
+        <td class="new-td"><input class="inputTd"  type="text" id="myInput2"></td>
+        <td class="new-td"><input class="inputTd"  type="text" id="myInput3"></td>
+        <td class="new-td"><input class="inputTd"  type="text" id="myInput4"></td>
+        <td class="new-td"><input class="inputTd"  type="text" id="myInput5"></td>
+        <td class="new-td"><input class="inputTd"  type="text" id="myInput6"></td>
+      </tr>
+        <tr class="approvBtn tr-hidden"  id="appId">
+            <td colspan="6"><button class="btn btn-primary" type="button" onclick="addConTd()">تایید</button></td>
+        </tr>
+    </tbody>
+            
+        </table>
+        </div>    
+        
+    </div>
+    <div id="cards" class="container-fluid mt-3 tab-pane fade" style="overflow-y: hidden">
+        <div class="container " style="direction: rtl">
+            <table>
+                <tbody>
+                    <td dir="rtl">
+                        <div class="darkOptions ">
+                            <h3>نحوه چیدمان کارت ها در صفحه را انتخاب کنید:</h3>
+                            <div class="container pr-4 mt-3">
+                                <span>
+                                    <input type="radio" class="form-check-input" id="autoRwd" name="forRes" value="autoRes" checked  onclick=" autoCard()">
+                                    <label class="form-check-label text-md" for="autoRwd">به صورت خودکار</label>
+                                </span>
+                                <br>
+                                <span>
+                                    <input type="radio" class="form-check-input" id="manualRwd" name="forRes" value="manualRes" onclick="ShowHideDiv()">
+                                    <label class="form-check-label text-md" for="manualRwd">انتخاب تعداد کارت ها در هر سطر:</label>
+                                </span>
+                                </div>
+                                <div id="rowCheck" class="container-fluid justify-content-around mr-3" style="display: none; padding-right: 30px; margin-top: 10px">
+                                    <span>
+                                    <input type="radio" class="form-check-input" id="twoCard" name="forRes" value="twoCard" onclick="twoCard()">
+                                    <label class="form-check-label text-sm" for="a">دو کارت</label>
+                                    </span>
+                                    <span>
+                                    <input type="radio" class="form-check-input" id="threeCard" name="forRes" value="threeCard" onclick="threeCard()">
+                                    <label class="form-check-label text-sm" for="ab">سه کارت</label>
+                                    </span>
+                                    <span class="align-content-center">
+                                    <input type="radio" class="form-check-input" id="fourCard" name="forRes" value="fourCard" onclick="fourCard()">
+                                    <label class="form-check-label text-sm" for="ac">چهار کارت</label>
+                                    </span>
+                                    
+                                    </div>
+                                
+                            </div>
+                        <!-- </div>-->
+                    </td>
+                </tbody>
+            
+            </table>
+        </div>
+        
+        <div class="row justify-content-start mx-auto ps-5 mt-3" id="cardContent">
+            
+            <div class="col-lg-3 col-md-4 col-6 p-2 forManualSort">
+                <div class="card" >
+                    <img class="card-img-top img-fluid" src="https://picsum.photos/id/10/2500/1667" >
+                    <div class="card-body d-flex flex-column align-items-center justify-content-center" >
+                    <h4 class="card-title text-center text-md">image name 1</h4>
+                    <p class="card-text text-center text-sm">Lorem ipsum dolor sit amet, in omnium contentiones mel, tation utinam timeam ne</p>
+                   <a href="#" class="text-sm text-center">See more</a>
+                </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-6 p-2 forManualSort">
+                <div class="card" >
+                    <img class="card-img-top img-fluid" src="https://picsum.photos/id/12/2500/1667" >
+                    <div class="card-body d-flex flex-column align-items-center justify-content-center" >
+                    <h4 class="card-title text-center text-md">image name 2</h4>
+                    <p class="card-text text-center text-sm ">Lorem ipsum dolor sit amet, in omnium contentiones mel, tation utinam timeam ne</p>
+                   <a href="#" class="text-sm text-center">See more</a>
+                </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-6 p-2 forManualSort">
+                <div class="card" >
+                    <img class="card-img-top img-fluid" src="https://picsum.photos/id/14/2500/1667" >
+                    <div class="card-body d-flex flex-column align-items-center justify-content-center" >
+                    <h4 class="card-title text-center text-md">image name 3</h4>
+                    <p class="card-text text-center text-sm ">Lorem ipsum dolor sit amet, in omnium contentiones mel, tation utinam timeam ne</p>
+                   <a href="#" class="text-sm text-center">See more</a>
+                </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-6 p-2 forManualSort">
+                <div class="card" >
+                    <img class="card-img-top img-fluid" src="https://picsum.photos/id/15/2500/1667" >
+                    <div class="card-body d-flex flex-column align-items-center justify-content-center" >
+                    <h4 class="card-title text-center text-md">image name 4</h4>
+                    <p class="card-text text-center text-sm ">Lorem ipsum dolor sit amet, in omnium contentiones mel, tation utinam timeam ne</p>
+                   <a href="#" class="text-sm text-center">See more</a>
+                </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-6 p-2 forManualSort">
+                <div class="card" >
+                    <img class="card-img-top img-fluid" src="https://picsum.photos/id/22/4434/3729" >
+                    <div class="card-body d-flex flex-column align-items-center justify-content-center" >
+                    <h4 class="card-title text-center text-md">image name 5</h4>
+                    <p class="card-text text-center text-sm ">Lorem ipsum dolor sit amet, in omnium contentiones mel, tation utinam timeam ne</p>
+                   <a href="#" class="text-sm text-center">See more</a>
+                </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-6 p-2 forManualSort">
+                <div class="card" >
+                    <img class="card-img-top img-fluid" src="https://picsum.photos/id/23/3887/4899" >
+                    <div class="card-body d-flex flex-column align-items-center justify-content-center" >
+                    <h4 class="card-title text-center text-md">image name 6</h4>
+                    <p class="card-text text-center text-sm ">Lorem ipsum dolor sit amet, in omnium contentiones mel, tation utinam timeam ne</p>
+                   <a href="#" class="text-sm text-center">See more</a>
+                </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-6 p-2 forManualSort">
+                <div class="card" >
+                    <img class="card-img-top img-fluid" src="https://picsum.photos/id/28/367/267" >
+                    <div class="card-body d-flex flex-column align-items-center justify-content-center" >
+                    <h4 class="card-title text-center text-md">image name 7</h4>
+                    <p class="card-text text-center text-sm ">Lorem ipsum dolor sit amet, in omnium contentiones mel, tation utinam timeam ne</p>
+                   <a href="#" class="text-sm text-center">See more</a>
+                </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-6 p-2 forManualSort">
+                <div class="card" >
+                    <img class="card-img-top img-fluid" src="https://picsum.photos/id/29/4000/2670" >
+                    <div class="card-body d-flex flex-column align-items-center justify-content-center" >
+                    <h4 class="card-title text-center text-md">image name 8</h4>
+                    <p class="card-text text-center text-sm ">Lorem ipsum dolor sit amet, in omnium contentiones mel, tation utinam timeam ne</p>
+                   <a href="#" class="text-sm text-center">See more</a>
+                </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-6 p-2 forManualSort">
+                <div class="card" >
+                    <img class="card-img-top img-fluid" src="https://picsum.photos/id/30/1280/901" >
+                    <div class="card-body d-flex flex-column align-items-center justify-content-center" >
+                    <h4 class="card-title text-center text-md">image name 9</h4>
+                    <p class="card-text text-center text-sm ">Lorem ipsum dolor sit amet, in omnium contentiones mel, tation utinam timeam ne</p>
+                   <a href="#" class="text-sm text-center">See more</a>
+                </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-6 p-2 forManualSort">
+                <div class="card" >
+                    <img class="card-img-top img-fluid" src="https://picsum.photos/id/41/1280/805" >
+                    <div class="card-body d-flex flex-column align-items-center justify-content-center" >
+                    <h4 class="card-title text-center text-md">image name 10</h4>
+                    <p class="card-text text-center text-sm ">Lorem ipsum dolor sit amet, in omnium contentiones mel, tation utinam timeam ne</p>
+                   <a href="#" class="text-sm text-center">See more</a>
+                </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-6 p-2 forManualSort">
+                <div class="card" >
+                    <img class="card-img-top img-fluid" src="https://picsum.photos/id/43/1280/831" >
+                    <div class="card-body d-flex flex-column align-items-center justify-content-center" >
+                    <h4 class="card-title text-center text-md">image name 11</h4>
+                    <p class="card-text text-center text-sm ">Lorem ipsum dolor sit amet, in omnium contentiones mel, tation utinam timeam ne</p>
+                   <a href="#" class="text-sm text-center">See more</a>
+                </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-6 p-2 forManualSort">
+                <div class="card" >
+                    <img class="card-img-top img-fluid" src="https://picsum.photos/id/46/3264/2448" >
+                    <div class="card-body d-flex flex-column align-items-center justify-content-center" >
+                    <h4 class="card-title text-center text-md">image name 12</h4>
+                    <p class="card-text text-center text-sm ">Lorem ipsum dolor sit amet, in omnium contentiones mel, tation utinam timeam ne</p>
+                   <a href="#" class="text-sm text-center">See more</a>
+                </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-6 p-2 forManualSort">
+                <div class="card" >
+                    <img class="card-img-top img-fluid" src="https://picsum.photos/id/55/4608/3072" >
+                    <div class="card-body d-flex flex-column align-items-center justify-content-center" >
+                    <h4 class="card-title text-center text-md">image name 13</h4>
+                    <p class="card-text text-center text-sm ">Lorem ipsum dolor sit amet, in omnium contentiones mel, tation utinam timeam ne</p>
+                   <a href="#" class="text-sm text-center">See more</a>
+                </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-6 p-2 forManualSort">
+                <div class="card" >
+                    <img class="card-img-top img-fluid" src="https://picsum.photos/id/57/2448/3264" >
+                    <div class="card-body d-flex flex-column align-items-center justify-content-center" >
+                    <h4 class="card-title text-center text-md">image name 14</h4>
+                    <p class="card-text text-center text-sm ">Lorem ipsum dolor sit amet, in omnium contentiones mel, tation utinam timeam ne</p>
+                   <a href="#" class="text-sm text-center">See more</a>
+                </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-6 p-2 forManualSort">
+                <div class="card" >
+                    <img class="card-img-top img-fluid" src="https://picsum.photos/id/58/1280/853" >
+                    <div class="card-body d-flex flex-column align-items-center justify-content-center" >
+                    <h4 class="card-title text-center text-md">image name 15</h4>
+                    <p class="card-text text-center text-sm ">Lorem ipsum dolor sit amet, in omnium contentiones mel, tation utinam timeam ne</p>
+                   <a href="#" class="text-sm text-center">See more</a>
+                </div>
+                </div>
+            </div>
+ 
+        </div>
+            </div>
+    <div id="contact" class="container-fluid tab-pane fade">
+        <div class="dark_contact container justify-content-center">
+            <h4 class="text-center display-5">Contact Us</h4>
+            <p class="text-md text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <div class="container shadow pt-1 contact-info-wide miniForm" style="background-color:rgb(242, 242, 242);width: 80%;border-radius: 9px; z-index:100 !important; margin-bottom: -9px; position: relative; display: none ">
+                <h4 class="text-center text-md">Contact Info</h4>
+                <div class="row">
+                <div class="col-4 text-center">
+                  <div class="row">
+                                <div style="width:20%"><i class="fa-solid fa-location-dot"></i></div>  
+                                  <div style="width:80%" >
+                                      <p class="text-sm"><strong>Mashhad</strong> id donec ultrices tincidunt </p>
+                                  </div>
+                              </div> 
+                </div>
+                <div class="col-4 text-center">
+                      <div class="row" >
+                                <div style="width:20%"><i class="fa-solid fa-envelope"></i></div>  
+                                  <div style="width:80%" >
+                                      <p class="text-sm" style="line-height: 1.3"><a href="#" class="lastLink" style="text-decoration: none; color: black"><strong>My email</strong></a></p>
+                                  </div>
+                              </div>
+                </div>
+                <div class="col-4 text-center">
+                      <div class="row">
+                                <div style="width:20%"><i class="fa-solid fa-phone-volume"></i></div>  
+                                  <div style="width:80%" >
+                                      <p style="font-size: 13px"><strong>09366424937</strong></p>
+                                  </div>
+                              </div>
+                </div>
+            </div>
+            </div>
+            
+        </div>
+        
+      <div class="container darkForm" style="background-color: rgb(234, 234, 234);">
+          <div class="row align-items-stretch no-gutters contact-wrap">
+              <div class="col-1 contact-info ">
+                  <div class="border shadow miniForm" style="width: 13vw; height: 250px;position: relative; left: -9vw; top: 20px; background-color: rgb(242, 242, 242); border-radius: 9px" >
+                <!--     <div class="card-body d-flex flex-column align-items-center justify-content-center" >
+                    <h4 class="card-title text-center text-md">image name 15</h4>
+                    <p class="card-text text-center text-sm ">Lorem ipsum dolor sit amet, in omnium contentiones mel, tation utinam timeam ne</p>
+                   <a href="#" class="text-sm">See more</a>
+                </div> -->
+                      <div class="container-fluid d-flex flex-column">
+                          <h5 class="text-center pt-2 mb-3">Contact Info</h5>
+                          <div class="d-flex flex-column">
+                              <div class="row">
+                                <div style="width:20%"><i class="fa-solid fa-location-dot"></i></div>  
+                                  <div style="width:80%" >
+                                      <p style="font-size: 13px"><strong>Mashhad</strong> id donec ultrices tincidunt </p>
+                                  </div>
+                              </div>
+                              <div class="row" >
+                                <div style="width:20%"><i class="fa-solid fa-envelope"></i></div>  
+                                  <div style="width:80%" >
+                                      <p style="font-size: 13px"><a href="#" class="lastLink" style="text-decoration: none; color: black"><strong>My email</strong></a></p>
+                                  </div>
+                              </div>
+                              <div class="row mt-4">
+                                <div style="width:20%"><i class="fa-solid fa-phone-volume"></i></div>  
+                                  <div style="width:80%" >
+                                      <p style="font-size: 13px"><strong>09366424937</strong></p>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                </div>
+                  
+              </div>
+              <!---->
+              <div class="col-11 contact-message">
+              <div class="col-md-12 pt-3">
+                  <div class="form">
+                      <h4>Send Message</h4>
+                      <form class="mb-5" id="contactForm" name="contactForm">
+                          <div class="row">
+                              <div class="col-md-6 form-group mb-3">
+                                  <label for="" class="col-form-label">First Name *</label>
+                                  <input type="text" class="form-control" name="name" id="name" placeholder="Your name" required>
+                              </div>
+                              <div class="col-md-6 form-group mb-3">
+                                  <label for="" class="col-form-label">Last Name</label>
+                                  <input type="text" class="form-control" name="name" id="name" placeholder="Your last name">
+                              </div>
+                              
+                          </div>
+                          <div class="row">
+                              <div class="col-md-6 form-group mb-3">
+                                  <label for="" class="col-form-label">Email</label>
+                                  <input type="text" class="form-control" name="email" id="email" placeholder="Your email">
+                              </div>
+                              <div class="col-md-6 form-group mb-3">
+                                  <label for="" class="col-form-label">Mobile Number *</label>
+                                  <input type="text" class="form-control" name="mobileNumber" id="mobileNumber" placeholder="Mobile number" required>
+                              </div>
+                              
+                             <!-- -->
+                          </div>
+                          
+                          <div class="row">
+                              <div class="col-md-6 form-group mb-3">
+                                  <label for="message" class="col-form-label">Message *</label>
+                                  <textarea class="form-control" name="message" type="text" id="message" cols="15" rows="2" placeholder="Write your message" required></textarea>
+                              </div>
+                              <div class="col-md-6 form-group align-self-end pb-3">
+                                  <input type="submit" value="Submit" class="btn btn-primary rounded-1 py-2 px-4">
+                              </div>
+                          </div>
+                       
+                      </form>
+                  </div>
+              </div>
+             </div>
+              <!---->
+          </div>
+        </div>
+    </div>
+            
+        </div>
+        <script src="apps/app.js"></script>
+    </body>
+</html>

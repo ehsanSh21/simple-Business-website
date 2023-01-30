@@ -1,0 +1,222 @@
+ * {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  outline: 0;
+  background-color: inherit;
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  box-shadow: none;
+  box-sizing: border-box;
+}
+
+.bg {
+  background-image: url(../new_york.jpg);
+  height: 100vh; 
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+ position: relative;
+}
+.topOfBg{
+    background-color: rgba(26, 26, 26, 0.8);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/*.cards{
+    min-height: 100vh;
+}*/
+.card-header{
+    background: none !important;
+    border-bottom: none !important;
+    display: flex;
+    justify-content: center;
+    margin-bottom: -5px !important;
+}
+.circle{
+    height: 45px;
+  width: 45px;
+  border-radius: 50%;
+  display: inline-block;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+}
+.card-body{
+    padding-top: 0px !important; 
+    
+}
+.card:hover{
+    box-shadow: 4px 4px rgb(140, 140, 140) !important;
+    transform: translateY(-6px);
+    transition-delay: 0.1s;
+}
+.card:hover .circle{
+    transform: translateY(-70%);
+    transition-delay: 0.1s;
+    
+}
+.card:hover .card-body{
+    transform: translateY(-10%);
+    transition-delay: 0.1s;
+}
+
+.card-icons:hover{
+    transform: translateY(-3px);
+}
+.cTop {
+    position:fixed;
+    bottom: 20px;
+    right:30px;
+    width: 40px;
+    height: 40px;
+    border-radius:50%;
+    background:#bbb;
+    z-index: 10;
+    transition: all 1s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.shown {
+    opacity:1;
+    bottom:40px;
+}
+.hiden {
+    opacity:0;
+    bottom:-100px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/***********Media Queries***************/
+
+@media only screen and (max-width: 576px){
+    /*.text-superSm{
+        font-size: 8px;
+        line-height: 0.8;
+    }*/
+    .text-sm{
+        font-size: 12px;
+        line-height: 0.8;
+        
+    }
+    .text-md{
+        font-size: 15px;
+        line-height: 0.9;
+    }
+    .text-lg{
+        font-size: 22px;
+        line-height: 1;
+    }
+}
+@media only screen and (max-width: 768px){
+    .text-sm{
+        font-size: 14px;
+        line-height: 0.8;
+        
+    }
+    .text-md{
+        font-size: 17px;
+        line-height: 0.9;
+        
+    }
+    .text-lg{
+        font-size: 24px;
+        line-height: 1.2;
+    }
+    
+}
+@media only screen and (min-width: 768px){
+    .text-sm{
+        font-size: 15px;
+        line-height: 0.82;
+        
+    }
+    .text-md{
+        font-size: 21px;
+        line-height: 1;
+        
+    }
+    .text-lg{
+        font-size: 28px;
+        line-height: 1.4;
+    }
+    
+    
+}
+
+@media only screen and (max-width: 1000px){
+    .card{
+        width: 150px !important;
+        height: 190px !important;
+    }
+}
+
+@media only screen and (max-width: 767px){
+    .card{ 
+    width: 175px !important;
+        height: 210px !important;
+        margin-top: 10px;
+    }
+}
+
+@media only screen and (max-width: 1000px){
+    .cards-info{
+        height: 270px !important;
+        margin-top: 30px !important;
+    }
+}
+@media only screen and (min-width: 1001px){
+    .card-text{
+        font-size: 18px;
+        line-height: 1;
+    }
+}
+@media only screen and (max-width: 767px){
+    .card-info-img img{
+        height: 90px !important;
+        padding-bottom: 5px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
